@@ -1,0 +1,60 @@
+.discount-container {
+    margin: 3rem;
+    background-color: #FCEBEA;
+    border-radius: 20px;
+
+    .discount-main-conta {
+        display: flex;
+        justify-content: space-between;
+        padding: 5rem;
+
+        .discount-text {
+            >h1 {
+                font-size: 3rem;
+                font-weight: 600;
+                font-family: "Poppins", serif;
+                color: #393280;
+            }
+
+            >p {
+                margin-top: 1.3rem;
+                font-size: 1.3rem;
+                font-weight: 300;
+                font-family: "Poppins", serif;
+                color: #393280;
+            }
+
+            .discount-time {
+                padding: 5rem;
+                gap: 3rem;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-direction: row;
+                align-items: center;
+                margin: auto;
+
+                .time {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    >span>h1 {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        font-family: "Poppins", serif;
+                        color: #ED553B;
+                    }
+
+                    >span>p {
+                        font-size: 1.3rem;
+                        font-weight: 300;
+                        font-family: "Poppins", serif;
+                        color: #393280;
+                    }
+                }
+            }
+        }
+    }
+}

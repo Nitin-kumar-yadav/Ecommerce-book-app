@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './page/Home'
+import Books from './page/Books'
+import Login from './page/Login'
+import Signup from './page/Signup'
+import Cart from './page/Cart'
+import ErrorPage from './page/ErrorPage'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Profile from './page/Profile'
+import ProtectedRoute from './utils/ProtectedRoute'
 
-function App() {
+const App = ({ userIsAuthenticated }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="cart" element={<Cart />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,65 @@
+.new-book {
+
+    margin: auto;
+    background: #FCECEC;
+    padding: 5rem;
+    height: fit-content;
+
+    .some-item>h5 {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        text-align: center;
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: "Poppins", serif;
+        color: #7A7A7A;
+    }
+
+    .new-release {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .line-1 {
+            height: 4px;
+            width: 30%;
+            background-color: #afafaf;
+        }
+
+        span>h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: "Poppins", serif;
+            color: #393280;
+        }
+
+        .line-2 {
+            height: 4px;
+            width: 30%;
+            background-color: #afafaf;
+        }
+    }
+
+    .book-card {
+        display: flex;
+        // border: 1px solid orange;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: row;
+        align-items: center;
+
+        .BookCard {
+            justify-content: center;
+            display: flex;
+            gap: 2rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+}

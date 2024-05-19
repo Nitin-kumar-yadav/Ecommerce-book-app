@@ -1,0 +1,93 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+
+    .left-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        font-family: "Poppins", serif;
+
+        >h3 {
+            display: flex;
+            gap: 10px;
+            color: #ED553B;
+
+            >span {
+                color: black;
+            }
+        }
+
+        >p {
+            display: flex;
+            gap: 10px;
+            color: #ED553B;
+            font-weight: 500;
+
+            >span {
+                color: black;
+            }
+        }
+    }
+
+    .right-profile {
+        width: 20%;
+
+        >h2 {
+            color: #ED553B;
+            font-weight: 500;
+            font-family: "Poppins", serif;
+            text-transform: uppercase;
+        }
+
+        .address {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 2rem;
+
+            >input {
+                font-size: 18px;
+                padding: 5px;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                color: #ED553B;
+                font-weight: 500;
+                font-family: "Poppins", serif;
+                outline: none;
+            }
+
+            .button {
+                display: flex;
+                justify-content: space-evenly;
+
+                >button {
+                    text-transform: uppercase;
+                    width: 130px;
+                    height: 40px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #ED553B;
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    font-family: "Poppins", serif;
+                    text-align: center;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: white;
+                        color: #ED553B;
+                        border: 1px solid #ED553B;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

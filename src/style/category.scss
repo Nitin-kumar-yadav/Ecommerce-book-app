@@ -1,0 +1,48 @@
+.main-class {
+    padding: 0px 5rem;
+    margin: 3rem 0px;
+
+    .category {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        .categories {
+            font-size: 1.2rem;
+            font-weight: 800;
+            font-family: "Poppins", Helvetica, Arial;
+            display: flex;
+            align-items: center;
+            gap: 1.3rem;
+
+            .category-line {
+                height: 3px;
+                width: 50px;
+                background-color: #ED553B;
+            }
+
+            >h3 {
+                color: #ED553B;
+            }
+        }
+
+        .explore {
+            font-weight: 800;
+            font-family: "Poppins", serif;
+
+            >h1 {
+                color: #393280;
+            }
+        }
+    }
+
+    .card-components {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        padding: 1.8rem 0px;
+        gap: 1.6rem;
+        flex-wrap: wrap;
+    }
+}

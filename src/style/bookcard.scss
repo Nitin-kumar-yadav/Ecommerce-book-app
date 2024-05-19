@@ -1,0 +1,99 @@
+.book-card {
+    margin: 20px 0;
+    height: 550px;
+    width: 350px;
+
+    // border: 1px solid orange;
+
+    .books-in-card {
+
+        background-color: white;
+
+        .main-card {
+            // max-height: 450px;
+            padding: 1.5rem;
+            // max-width: 305px;
+
+            .image-container>img {
+                max-height: 450px;
+                max-width: 305px;
+            }
+        }
+
+        .button>button {
+            position: absolute;
+            bottom: 0px;
+
+            left: 18px;
+            width: 90%;
+            height: 40px;
+            background-color: #ED553B;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: "Poppins", serif;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            display: none;
+            visibility: hidden;
+
+        }
+
+        &:hover {
+            filter: blur();
+            transition: buttonAnimation 0.3s ease-in-out;
+
+            .button>button {
+                display: block;
+                visibility: visible;
+                animation: buttonAnimation 0.3s ease-in-out forwards;
+            }
+        }
+    }
+
+    .book-details {
+        margin-top: 1.5rem;
+        text-align: center;
+
+        >h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: "Poppins", serif;
+            color: #393280;
+        }
+
+        >p {
+            padding: 6px 0;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: "Poppins", serif;
+            color: #888888;
+        }
+
+        >h4 {
+            font-weight: 500;
+            font-family: "poppins", serif;
+            color: #ED553B;
+        }
+    }
+}
+
+
+@keyframes buttonAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}

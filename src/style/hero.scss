@@ -1,0 +1,60 @@
+.hero {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    background: linear-gradient(to right, #FFE5E5, #F5FFFE, #FFFFFF);
+
+    .book-text {
+        font-family: "Poppins", "Helvetica Neue", ;
+        width: 50%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .book-title>h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #393280;
+        }
+
+        .para>p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        >button {
+            margin-top: 1rem;
+            width: 15%;
+            min-width: 10%;
+            background: transparent;
+            height: 3rem;
+            border: none;
+            border-radius: 0.5rem;
+            border: 1px solid #ED553B;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+                background: #ED553B;
+
+                border: 1px solid #ED553B;
+
+                >a {
+                    color: #fff;
+                }
+            }
+
+            >a {
+                color: #ED553B;
+                text-decoration: none;
+            }
+        }
+    }
+}

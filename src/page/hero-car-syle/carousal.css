@@ -1,0 +1,29 @@
+/* Example CSS */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    border: 1px solid #ED553B;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    margin: 0px 20px;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    color: #ED553B;
+    /* Add any other icon styles you need */
+}
