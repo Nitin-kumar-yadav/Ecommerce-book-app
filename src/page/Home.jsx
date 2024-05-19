@@ -11,7 +11,7 @@ const Home = () => {
 
     useEffect(() => {
         const bookData = async () => {
-            const response = await fetch('http://localhost:5000/books')
+            const response = await fetch('https://ecommerce-book-backend-api.onrender.com/books')
             const data = await response.json()
             setBooks(data)
         }

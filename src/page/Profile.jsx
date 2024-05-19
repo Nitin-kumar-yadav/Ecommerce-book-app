@@ -10,7 +10,7 @@ const Profile = () => {
 
         const UserProfile = async (id) => {
             try {
-                const res = await axios(`http://localhost:5000/books/user/${id}`)
+                const res = await axios(`https://ecommerce-book-backend-api.onrender.com/books/user/${id}`)
                 setData(res.data)
                 console.log(res.data)
             } catch (error) {

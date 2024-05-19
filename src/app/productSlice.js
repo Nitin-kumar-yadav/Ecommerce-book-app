@@ -19,7 +19,7 @@ export default productSlice.reducer;
 export function fetchProduct() {
     return async (dispatch, getState) => {
         try {
-            const response = await fetch("http://localhost:5000/books");
+            const response = await fetch("https://ecommerce-book-backend-api.onrender.com/books");
             const data = await response.json();
             dispatch(setBooks(data));
         } catch (error) {

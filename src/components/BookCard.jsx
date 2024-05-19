@@ -55,7 +55,7 @@ const BookCard = () => {
 
     useEffect(() => {
         const response = async () => {
-            const res = await fetch('http://localhost:5000/books');
+            const res = await fetch('https://ecommerce-book-backend-api.onrender.com/books');
             const data = await res.json();
             setBooks(data);
         }

@@ -29,7 +29,7 @@ const Signup = () => {
         }
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:5000/books/signup`, data)
+            const response = await axios.post(`https://ecommerce-book-backend-api.onrender.com/books/signup`, data)
             if (!response) {
                 toast.error("Something went wrong")
             }
