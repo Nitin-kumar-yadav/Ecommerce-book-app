@@ -15,7 +15,6 @@ const Hero = ({ books }) => {
                 axis={'horizontal'}
                 autoPlay={true}
                 showThumbs={false}
-                emulateTouch={false}
                 stopOnHover={false}
                 useKeyboardArrows={false}
                 infiniteLoop={true}
@@ -23,6 +22,7 @@ const Hero = ({ books }) => {
                 showIndicators={false}
                 showArrows={true}
                 transitionTime={1500}
+                swipeable={false}
 
                 // Other props...
                 renderArrowPrev={(clickHandler, hasPrev) => (
