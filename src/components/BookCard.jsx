@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { useNavigate } from 'react-router-dom'
 
 const BookCard = () => {
+    const [loading, setLoading] = useState(true);
 
     const animation = {
         div: {
@@ -58,9 +59,14 @@ const BookCard = () => {
             const res = await fetch('https://ecommerce-book-backend-api.onrender.com/books');
             const data = await res.json();
             setBooks(data);
+            setLoading(false);
         }
         response();
     }, []);
+
+    if (loading) {
+        return <div className="custom-spinner"></div>;
+    }
 
 
     return (

@@ -23,6 +23,7 @@ const Login = () => {
             if (!response) {
                 toast.error("Something went wrong")
             }
+            setLoading(false);
             toast.success("User logged in successfully")
             localStorage.setItem("token", response.data.token)
             localStorage.setItem("userId", response.data.user.id)
@@ -30,6 +31,7 @@ const Login = () => {
             navigate('/')
         } catch (error) {
             toast.error("Email or password incorrect")
+            setLoading(false);
         }
     }
 

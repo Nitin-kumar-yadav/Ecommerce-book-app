@@ -105,12 +105,13 @@
                     a>svg {
                         width: 1.6rem;
                         height: 1.6rem;
+                        color: #ED553B;
                     }
 
                     .cart-count {
                         position: absolute;
-                        top: 4.7rem;
-                        right: 4.5rem;
+                        top: 4.5rem;
+                        right: 19.8rem;
                         color: #ED553B;
                         font-size: 1rem;
                         font-weight: 500;
@@ -174,6 +175,7 @@
                 }
             }
 
+
             .shopping-icons {
                 cursor: pointer;
 
@@ -181,6 +183,7 @@
                     a>svg {
                         width: 1.6rem;
                         height: 1.6rem;
+                        color: white;
                     }
 
                     .cart-count {

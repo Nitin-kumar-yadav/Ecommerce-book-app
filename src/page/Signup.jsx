@@ -17,33 +17,39 @@ const Signup = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-        if (password !== confirm) {
+        if (!name || !email || !password || !confirm || !address || !mobile) {
+            toast.error("Please fill all the fields")
+        }
+        else if (password !== confirm) {
             toast.error("Passwords do not match")
         }
-        const data = {
-            name,
-            email,
-            password,
-            address,
-            mobile
-        }
-        setLoading(true);
-        try {
-            const response = await axios.post(`https://ecommerce-book-backend-api.onrender.com/books/signup`, data)
-            if (!response) {
-                toast.error("Something went wrong")
+        else {
+            const data = {
+                name,
+                email,
+                password,
+                address,
+                mobile
             }
-            toast.success("User created successfully")
-            navigate('/login');
-            setName("")
-            setEmail("")
-            setPassword("")
-            setConfirm("")
-            setAddress("")
-            setMobile("")
+            setLoading(true);
+            try {
+                const response = await axios.post(`https://ecommerce-book-backend-api.onrender.com/books/signup`, data)
+                if (!response) {
+                    toast.error("Something went wrong")
+                }
+                toast.success("User created successfully")
+                navigate('/login');
+                setLoading(false);
+                setName("")
+                setEmail("")
+                setPassword("")
+                setConfirm("")
+                setAddress("")
+                setMobile("")
 
-        } catch (error) {
-            toast.error("User already exists")
+            } catch (error) {
+                toast.error("User already exists")
+            }
         }
 
     }
