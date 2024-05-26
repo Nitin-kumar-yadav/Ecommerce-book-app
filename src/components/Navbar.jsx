@@ -40,9 +40,9 @@ const Navbar = () => {
                     <span>+91 9838984540</span>
                 </div>
                 <div className="social-icon">
-                    <a href="https://www.facebook.com"><FaFacebookF /></a>
-                    <a href="https://www.instagram.com"><FaInstagram /></a>
-                    <a href="https://www.linkedin.com"><FaLinkedinIn /></a>
+                    <a href="https://www.facebook.com/p/Nitin-Yadav-100074141270094/" target='_blank'><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/nitin_kumar_0201" target='_blank' ><FaInstagram /></a>
+                    <a href="https://www.linkedin.com/in/nitin-kumar-cs-179088247/" target='_blank' ><FaLinkedinIn /></a>
                 </div>
             </div>
             <div className="mid-navbar">
@@ -94,17 +94,17 @@ const Navbar = () => {
                             <RxCross1 onClick={sliderClose} />
                         </li>
                         <li>
-                            <Link to={"/"} >Home</Link>
+                            <Link to={"/"} onClick={sliderClose} >Home</Link>
                         </li>
                         <li>
-                            <Link to={"/books"} >Books</Link>
+                            <Link to={"/books"} onClick={sliderClose} >Books</Link>
                         </li>
 
 
                         {
                             (!localStorage.getItem('token')) ?
                                 <><li>
-                                    <Link to={"/login"} >Login</Link>
+                                    <Link onClick={sliderClose} to={"/login"} >Login</Link>
                                 </li>
                                     <li>
                                         <Link to={"/signup"} >Sign up</Link>
@@ -112,7 +112,7 @@ const Navbar = () => {
                                 :
                                 <>
                                     <li>
-                                        <Link to={"/profile"} >Profile</Link>
+                                        <Link onClick={sliderClose} to={"/profile"} >Profile</Link>
                                     </li>
                                     <li>
                                         <button onClick={logoutHandle} >

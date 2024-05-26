@@ -13,11 +13,11 @@ const BookCard = () => {
                 duration: 0.5
             },
             initial: {
-                x: "-100%",
+                y: "-100%",
                 opacity: 0,
             },
             whileInView: {
-                x: 0,
+                y: 0,
                 opacity: 1,
             }
         },
@@ -26,11 +26,11 @@ const BookCard = () => {
                 duration: 0.5
             },
             initial: {
-                x: "100%",
+                y: "100%",
                 opacity: 0,
             },
             whileInView: {
-                x: 0,
+                y: 0,
                 opacity: 1,
             }
         }

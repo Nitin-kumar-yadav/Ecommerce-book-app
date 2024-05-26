@@ -8,14 +8,14 @@ const Category = () => {
         h3: {
             transition: {
                 delay: 0.6,
-                duration: 1
+                duration: 0.5
             },
             initial: {
-                x: "100%",
+                y: "100%",
                 opacity: 0,
             },
             whileInView: {
-                x: 0,
+                y: 0,
                 opacity: 1,
             }
 
@@ -23,7 +23,7 @@ const Category = () => {
         h1: {
             transition: {
                 delay: 0.6,
-                duration: 1
+                duration: 0.5
             },
             initial: {
                 y: "100%",

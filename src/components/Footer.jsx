@@ -13,11 +13,11 @@ const Footer = () => {
                 ease: "easeInOut"
             },
             initial: {
-                x: "-100%",
+                y: "-100%",
                 opacity: 0,
             },
             whileInView: {
-                x: 0,
+                y: 0,
                 opacity: 1,
             }
         },
@@ -41,11 +41,11 @@ const Footer = () => {
                 ease: "easeInOut"
             },
             initial: {
-                x: "50%",
+                y: "50%",
                 opacity: 0,
             },
             whileInView: {
-                x: 0,
+                y: 0,
                 opacity: 1,
             }
         },
@@ -75,9 +75,9 @@ const Footer = () => {
                     <p>Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
                     <div className="social-svg-icons">
-                        <span><a href="#"><FaFacebookF /></a></span>
-                        <span><a href="#"><FaInstagram /></a></span>
-                        <span><a href="#"><FaLinkedinIn /></a></span>
+                        <span><a href="https://www.facebook.com/p/Nitin-Yadav-100074141270094/" target='_blank'><FaFacebookF /></a></span>
+                        <span><a href="https://www.instagram.com/nitin_kumar_0201" target='_blank' ><FaInstagram /></a></span>
+                        <span> <a href="https://www.linkedin.com/in/nitin-kumar-cs-179088247/" target='_blank' ><FaLinkedinIn /></a></span>
                         <span></span>
                     </div>
                 </motion.div>
