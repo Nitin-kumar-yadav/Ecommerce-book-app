@@ -80,7 +80,7 @@ const Cart = () => {
                             <p>{product.author}</p>
                         </div>
                         <div className="cart-price">
-                            <p>Price: ${product.price}</p>
+                            <p>Price: ₹{product.price}</p>
                         </div>
                         <div className="remove-button">
                             <button onClick={() => handleRemove(product._id)} >Remove</button>
@@ -91,7 +91,7 @@ const Cart = () => {
             <div div className="check-out" >
                 <button onClick={paymentHandler} >Check Out</button>
                 <div div className="total-price" >
-                    <h2>Total Price: ${totalPrice}</h2>
+                    <h2>Total Price: ₹{totalPrice}</h2>
                 </div>
             </div>
         </div >

@@ -87,7 +87,7 @@ const BookCard = () => {
                     <motion.div {...animation.book_details} className="book-details">
                         <h3>{bookData.title.length > 30 ? bookData.title.slice(0, 30) : bookData.title}</h3>
                         <p>{bookData.author}</p>
-                        <h4>$ {bookData.price}</h4>
+                        <h4>₹ {bookData.price}</h4>
                     </motion.div>
                 </div>
             ))
