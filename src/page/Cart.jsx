@@ -34,8 +34,15 @@ const Cart = () => {
                     payment_capture: 1
                 })
             })
+            if (!response) {
+                toast.error("Some error occurred")
+                return
+            }
             const order = await response.json()
-            console.log(order)
+            if (!order) {
+                toast.error("Order creation failed")
+                return
+            }
 
             const option = {
                 key: 'rzp_test_1DP5mmOlF5G5ag',
@@ -57,8 +64,14 @@ const Cart = () => {
                     color: '#F37254'
                 }
             }
-            const rzp = new window.Razorpay(option)
-            rzp.open()
+
+            if (!option) {
+                toast.error("Some error occurred")
+                return
+            }
+
+            const rzp = await new window.Razorpay(option)
+            await rzp.open()
         } catch (error) {
             toast.error("Error opening")
             console.log(error)
