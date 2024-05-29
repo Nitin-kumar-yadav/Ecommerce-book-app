@@ -22,7 +22,7 @@ const Cart = () => {
 
     const paymentHandler = async () => {
         try {
-            const response = await fetch('http://localhost:5000/books/order', {
+            const response = await fetch('https://ecommerce-book-app-beta.vercel.app/books/order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
