@@ -31,12 +31,20 @@ const Cart = () => {
                 payment_capture: 1
             }
 
-            const response = await axios.post('http://localhost:5000/books/order', data)
+            const response = await fetch('https://ecommerce-book-backend-api.onrender.com/books/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
             if (!response) {
                 toast.error("Some error occurred")
                 return
             }
+
             const order = await response.json()
+
             if (!order) {
                 toast.error("Order creation failed")
                 return
