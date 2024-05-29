@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { remove } from '../app/cartSlice'
 import { toast } from 'react-toastify'
+import axios from 'axios'
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -22,18 +23,13 @@ const Cart = () => {
 
     const paymentHandler = async () => {
         try {
-            const response = await fetch('http://localhost:5000/books/order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    amount: totalPrice,
-                    currency: 'INR',
-                    receipt: 'order_rcptid_11',
-                    payment_capture: 1
-                })
-            })
+            const data = {
+                amount: totalPrice,
+                currency: 'INR',
+                receipt: 'order_rcptid_11',
+                payment_capture: 1
+            }
+            const response = await axios.post('http://localhost:5000/books/order', data)
             if (!response) {
                 toast.error("Some error occurred")
                 return
