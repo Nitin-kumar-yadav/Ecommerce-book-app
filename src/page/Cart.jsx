@@ -23,12 +23,14 @@ const Cart = () => {
 
     const paymentHandler = async () => {
         try {
+
             const data = {
                 amount: totalPrice,
                 currency: 'INR',
                 receipt: 'order_rcptid_11',
                 payment_capture: 1
             }
+
             const response = await axios.post('http://localhost:5000/books/order', data)
             if (!response) {
                 toast.error("Some error occurred")
