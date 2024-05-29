@@ -38,6 +38,7 @@ const Cart = () => {
                 },
                 body: JSON.stringify(data)
             })
+
             if (!response) {
                 toast.error("Some error occurred")
                 return
