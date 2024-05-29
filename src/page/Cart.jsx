@@ -31,7 +31,7 @@ const Cart = () => {
                 payment_capture: 1
             }
 
-            const response = await axios.post('https://ecommerce-book-app-beta.vercel.app/books/order', data)
+            const response = await axios.post('https://ecommerce-book-backend-api.onrender.com/books/order', data)
             if (!response) {
                 toast.error("Some error occurred")
                 return
