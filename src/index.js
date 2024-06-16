@@ -8,6 +8,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './app/store';
 
+// https://ecommerce-book-backend-api.onrender.com
+export const mainUrl = 'https://ecommerce-book-backend-api.onrender.com';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

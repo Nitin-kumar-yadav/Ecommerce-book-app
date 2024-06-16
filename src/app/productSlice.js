@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { mainUrl } from "..";
 
 const productSlice = createSlice({
     name: "product",
@@ -19,7 +20,7 @@ export default productSlice.reducer;
 export function fetchProduct() {
     return async (dispatch, getState) => {
         try {
-            const response = await fetch("https://ecommerce-book-backend-api.onrender.com/books");
+            const response = await fetch(`${mainUrl}/books`);
             const data = await response.json();
             dispatch(setBooks(data));
         } catch (error) {

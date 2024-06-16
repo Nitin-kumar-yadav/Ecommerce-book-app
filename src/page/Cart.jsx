@@ -1,16 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { remove } from '../app/cartSlice'
 import { toast } from 'react-toastify'
-import axios from 'axios'
+
 
 const Cart = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.cart)
-    console.log(products.price)
+    // console.log(products.price)
     const handleRemove = (productId) => {
         dispatch(remove(productId))
         toast.warn("Removed product")
     }
+
     if (products.length === 0) {
         return (
             <div className="cart-message">
@@ -60,8 +61,27 @@ const Cart = () => {
                 title: 'Payment',
                 image: 'https://i.imgur.com/3g7nmJC.png',
                 order_id: order.id,
-                handler: async function (response) {
-                    alert("Transaction Successful", response.razorpay_payment_id);
+                handler: async function processPayment(response) {
+                    try {
+                        function removeAll(items) {
+                            if (items.length === 0) {
+                                return; // Base case: stop recursion when there are no items
+                            }
+
+                            // Perform removal logic for the first item
+                            // ...
+
+                            // Recursively call removeAll with the remaining items
+                            removeAll(items.slice(1));
+                        }
+                        removeAll(products)
+                        window.location.reload()
+                        toast.success("Order placed successfully")
+                    } catch (error) {
+
+                        console.error(error);
+                        toast.error("Some error occurred");
+                    }
                 },
 
                 notes: {

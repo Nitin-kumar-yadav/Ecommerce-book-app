@@ -4,6 +4,7 @@ import { add } from '../app/cartSlice'
 import { toast } from 'react-toastify'
 import { motion } from "framer-motion"
 import { useNavigate } from 'react-router-dom'
+import { mainUrl } from '..'
 
 const BookCard = () => {
     const [loading, setLoading] = useState(true);
@@ -56,7 +57,7 @@ const BookCard = () => {
 
     useEffect(() => {
         const response = async () => {
-            const res = await fetch('https://ecommerce-book-backend-api.onrender.com/books');
+            const res = await fetch(`${mainUrl}/books`);
             const data = await res.json();
             setBooks(data);
             setLoading(false);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
+import { mainUrl } from ".."
 
 const Profile = () => {
     const [data, setData] = useState([])
@@ -10,7 +11,7 @@ const Profile = () => {
 
         const UserProfile = async (id) => {
             try {
-                const res = await axios(`https://ecommerce-book-backend-api.onrender.com/books/user/${id}`)
+                const res = await axios(`${mainUrl}/books/user/${id}`)
                 setData(res.data)
                 console.log(res.data)
             } catch (error) {

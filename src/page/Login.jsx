@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { mainUrl } from '..';
 
 const Login = () => {
 
@@ -18,7 +19,7 @@ const Login = () => {
         }
         setLoading(true);
         try {
-            const response = await axios.post('https://ecommerce-book-backend-api.onrender.com/books/login', data)
+            const response = await axios.post(`${mainUrl}/books/login`, data)
             console.log(response)
             if (!response) {
                 toast.error("Something went wrong")
