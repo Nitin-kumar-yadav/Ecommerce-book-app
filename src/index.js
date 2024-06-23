@@ -7,9 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './app/store';
+import './index.css';
 
 // https://ecommerce-book-backend-api.onrender.com
-export const mainUrl = 'https://ecommerce-book-backend-api.onrender.com';
+export const mainUrl = 'http://localhost:5000';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

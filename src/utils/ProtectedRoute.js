@@ -2,13 +2,16 @@ import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 
-const ProtectedRoute = () => {
+export const ProtectedRoute = () => {
     // Check for the token in localStorage
     const token = localStorage.getItem('token');
-
-    // If the token exists, render the Outlet which contains the protected components
-    // If not, redirect to the login page
     return token ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
-export default ProtectedRoute;
+export const AdminRoute = () => {
+    // Check for the token in localStorage
+    const id = "66459806096ae7b510f9831a"
+    const userId = localStorage.getItem('userId');
+    return userId === id ? <Outlet /> : <Navigate to="admin" replace />;
+}
+

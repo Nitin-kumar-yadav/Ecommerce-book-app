@@ -1,0 +1,29 @@
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    >h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #ED553B;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .admin-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+}

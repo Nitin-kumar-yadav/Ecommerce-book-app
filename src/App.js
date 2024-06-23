@@ -9,7 +9,8 @@ import ErrorPage from './page/ErrorPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Profile from './page/Profile'
-import ProtectedRoute from './utils/ProtectedRoute'
+import { AdminRoute, ProtectedRoute } from './utils/ProtectedRoute'
+import Admin from './components/Order'
 
 const App = ({ userIsAuthenticated }) => {
   return (
@@ -21,6 +22,9 @@ const App = ({ userIsAuthenticated }) => {
         <Route path="/login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
         <Route path="cart" element={<Cart />} />
+        <Route element={<AdminRoute />}>
+          <Route path='admin' element={<Admin />} />
+        </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>

@@ -72,6 +72,7 @@ const Navbar = () => {
                                     <li>
                                         <Link to={"/profile"} >Profile</Link>
                                     </li>
+
                                     <li>
                                         <button onClick={logoutHandle} >
                                             Logout
@@ -80,6 +81,7 @@ const Navbar = () => {
 
                                 </>
                         }
+
                     </ul>
                     <div className="shopping-icons">
                         <span className='cart'>
@@ -99,6 +101,7 @@ const Navbar = () => {
                         <li>
                             <Link to={"/books"} onClick={sliderClose} >Books</Link>
                         </li>
+
 
 
                         {

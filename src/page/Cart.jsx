@@ -1,12 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { remove } from '../app/cartSlice'
 import { toast } from 'react-toastify'
+import { mainUrl } from '..'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 
 const Cart = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.cart)
-    // console.log(products.price)
+    const navigate = useNavigate()
+    const [productsOrder, setProductsOrder] = useState()
+
     const handleRemove = (productId) => {
         dispatch(remove(productId))
         toast.warn("Removed product")
@@ -19,8 +25,34 @@ const Cart = () => {
             </div>
         )
     }
-
     const totalPrice = products.reduce((acc, curr) => acc + curr.price, 0)
+    const productId = []
+    for (let i = 0; i < products.length; i++) {
+        productId.push(products[i]._id)
+    }
+    console.log(productId)
+
+    const orderInfo = async () => {
+        try {
+            const orderData = {
+                bookId: productId,
+                userId: localStorage.getItem('userId')
+            }
+            const response = await axios.post(`${mainUrl}/books/orderConfirm`, orderData)
+            if (!response) {
+                toast.error("Some error occurred")
+                return
+            }
+            const responseData = JSON.stringify(response.data)
+            localStorage.setItem('orderConfirm', responseData)
+
+
+        }
+        catch (error) {
+            toast.error("Some error occurred")
+            return
+        }
+    }
 
     const paymentHandler = async () => {
         try {
@@ -32,7 +64,7 @@ const Cart = () => {
                 payment_capture: 1
             }
 
-            const response = await fetch('https://ecommerce-book-backend-api.onrender.com/books/order', {
+            const response = await fetch(`${mainUrl}/books/order`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -65,18 +97,18 @@ const Cart = () => {
                     try {
                         function removeAll(items) {
                             if (items.length === 0) {
-                                return; // Base case: stop recursion when there are no items
+                                return;
                             }
-
-                            // Perform removal logic for the first item
-                            // ...
-
-                            // Recursively call removeAll with the remaining items
                             removeAll(items.slice(1));
                         }
                         removeAll(products)
-                        window.location.reload()
+                        orderInfo()
                         toast.success("Order placed successfully")
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 3000)
+                        navigate('/profile')
+
                     } catch (error) {
 
                         console.error(error);
@@ -99,6 +131,8 @@ const Cart = () => {
 
             const rzp = await new window.Razorpay(option)
             await rzp.open()
+
+
         } catch (error) {
             toast.error("Error opening")
             console.log(error)
@@ -106,18 +140,16 @@ const Cart = () => {
 
     }
 
-
-
     return (
         <div className='cart-item' >
             <h1>Cart</h1>
             {
-                products.map(product => (
+                products.map((product, key) => (
 
-                    <div className="cart-top-one">
+                    <div key={key} className="cart-top-one">
                         <div className="cart-image">
                             <img src={product.image} alt="book" />
-                            {console.log(product._id)}
+
                         </div>
                         <div className="cart-title">
                             <h2>{product.title.length > 20 ? product.title.slice(0, 20) : product.title}</h2>

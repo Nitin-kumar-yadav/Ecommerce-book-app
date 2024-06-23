@@ -18,6 +18,7 @@ const Home = () => {
             const data = await response.json()
             setBooks(data)
             setLoading(false);
+
         }
         bookData()
     }, [])
