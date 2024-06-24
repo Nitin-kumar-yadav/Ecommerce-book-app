@@ -10,7 +10,7 @@ import store from './app/store';
 import './index.css';
 
 // https://ecommerce-book-backend-api.onrender.com
-export const mainUrl = 'http://localhost:5000';
+export const mainUrl = 'https://ecommerce-book-backend-api.onrender.com';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
