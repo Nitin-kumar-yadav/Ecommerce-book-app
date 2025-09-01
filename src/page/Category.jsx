@@ -50,8 +50,6 @@ const Category = () => {
             </div>
             <div className="card-components">
                 <Card />
-                <Card />
-                <Card />
             </div>
 
         </div>

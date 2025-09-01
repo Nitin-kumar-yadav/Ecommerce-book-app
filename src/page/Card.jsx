@@ -36,14 +36,32 @@ const Card = () => {
     }
 
     return (
+        <div className='card'>
+            <div className='card1' >
+                <motion.div {...animation.img} className="image">
+                    <img src="https://www.mentorbooks.ie/wp-content/uploads/2021/02/NOS-2-WRKBK-COVER-8-scaled.jpg" alt="Science" srcset="" />
+                </motion.div>
+                <div className="category-name">
+                    <motion.h2 {...animation.h2} >Science</motion.h2>
 
-        <div className='card' >
-            <motion.div {...animation.img} className="image">
-                <img src="https://cdn.pixabay.com/photo/2015/11/19/21/11/book-1052014_1280.jpg" alt="" srcset="" />
-            </motion.div>
-            <div className="category-name">
-                <motion.h2 {...animation.h2} >Science</motion.h2>
+                </div>
+            </div>
+            <div className='card1' >
+                <motion.div {...animation.img} className="image">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/91mq3UEpjGL.jpg" alt="History" srcset="" />
+                </motion.div>
+                <div className="category-name">
+                    <motion.h2 {...animation.h2} >History</motion.h2>
 
+                </div>
+            </div>
+            <div className='card1' >
+                <motion.div {...animation.img} className="image">
+                    <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781481409209/story-thieves-9781481409209_xlg.jpg" alt="Story" srcset="" />
+                </motion.div>
+                <div className="category-name">
+                    <motion.h2 {...animation.h2} >Story</motion.h2>
+                </div>
             </div>
         </div>
     )
